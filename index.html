@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="Menu">
+    <h1 id ="start">Iniciar</h1>
+    <ul>
+        <li class="difficult selected" id="easyMode">Fácil</li>
+        <li class="difficult" id="normalMode">Médio</li>
+        <li class="difficult" id="hardMode">Difícil</li>
+    </ul>
+    </section>
+    
+    <section class="quizzLayout">
+        <header class="scoring">
+            <h1 id="score"></h1>
+            <div id="showDifficult">Fácil</div>
+        </header>
+        <div class="quizzModel">
+            <img src="" id="mainImg">
+            <div class="questions">
+                <div class="question">
+                    <p></p>
+                </div>
+                <ul class="answers">
+                    <li class="answer"></li>
+                    <li class="answer"></li>
+                    <li class="answer"></li>
+                    <li class="answer"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <span class="blockClick"></span>
+
+    <section class="endScreen">
+        <img src="" id="result">
+        <h1 id="finalScore">0/X</h1>
+    </section>
+
+    <script src="menu.js"></script>
+    <script src="game.js" defer type="module"></script>
+</body>
+</html>

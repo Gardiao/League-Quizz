@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --backColor: rgba(1,9,20,255);
+    --wordColor: rgba(144,120,68,255);
+    --lighterColor: rgba(210,179,89,255);
+    --darkBlue: rgba(19,41,51,255);
+    --brighterBlue: rgba(22,71,73,255);
+}
+
+body {
+    background-image: url('Images/background.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Josefin Sans;
+}
+
+/* --------Menu---------*/
+
+.Menu, .endScreen {
+    background-color: var(--backColor);
+    color: var(--wordColor);
+    width: 800px;
+    height: 500px;
+    margin: 15vh 25vw auto;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    text-align: center;
+    transition: all 1s;
+}
+
+.Menu h1 {
+    margin: auto;
+    font-size: 75px;
+}
+
+.Menu ul{
+    margin: auto;
+    list-style-type: none;
+    font-size: 45px;
+}
+
+.Menu li {
+    padding: 35px;
+}
+
+.Menu h1:hover, .Menu li:hover, .selected {
+    cursor: pointer;
+    color: rgba(184,189,158,255);
+}
+
+.descriptionBox {
+    position: absolute;
+    background-color: var(--backColor);
+    color: var(--wordColor);
+    width: 250px;
+    height: 200px;
+    top: 15vh;
+    right: 2vw;
+    border: 4px solid rgba(210,179,89,255);
+    text-align: center;
+}
+
+.descriptionBox h1 {
+    font-size: 44px;
+    padding: 12px;
+}
+
+.descriptionBox p {
+    font-size: 28px;
+    padding: 8px;
+}
+
+/* -------------- */
+
+/*-------gameHeader------*/
+.quizzLayout {
+    position: fixed;
+    top: 0%;
+    visibility: hidden;
+    width: 100vw;
+}
+
+.scoring {
+    background-color: var(--wordColor);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 20vw;
+    height: 80px;
+    align-items: center;
+    transition: all 1s;
+    transform: translateY(-100%);
+}
+
+.scoring h1 {
+    text-align: center;
+    width: 100%;
+    margin-right: 60vw;
+    color: var(--lighterColor);
+}
+
+.scoring div {
+    text-align: center;
+    width: 70px;
+    background-color: rgba(15,22,24,255);
+    margin-top: 43px;
+    font-size: 25px;
+    border: 3px rgb(122, 3, 3) Solid;
+    border-bottom: none;
+    border-radius: 10%;
+    padding: 5px;
+}
+
+/* --------------- */
+
+/* -----Quizz----- */
+
+.quizzModel {
+    background-color: var(--backColor);
+    color: var(--wordColor);
+    width: 750px;
+    height: 600px;
+    margin: 10vh 25vw auto;
+    text-align: center;
+    transform: translateX(-100vw);
+    transition: all 1s;
+}
+
+.quizzModel img {
+    width: 100%;
+    height: 350px;
+}
+
+.questions {
+    display: grid;
+    grid-template-rows: 150px 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px;
+    height: 200px;
+}
+
+.answers {
+    display: flex;
+    justify-content: space-between;  
+    width: 750px;
+    height: 100%;
+    list-style-type: none;
+}
+
+.answer {
+    width: 140px;
+    background-color: var(--darkBlue);
+    color: white;
+    float: left;
+    padding: 7px;
+    font-size: 18px;
+    border: 3px Solid var(--brighterBlue);
+    border-radius: 15%;
+    margin: auto;
+}
+
+.answer:hover {
+    background-color: var(--brighterBlue);
+    cursor: pointer;
+}
+
+.blockClick {
+    position: absolute;
+    width: 750px;
+    height: 100px;
+    margin: 5vh 25vw auto;
+    visibility: hidden;
+}
+
+.activeBlock {
+    visibility: visible;
+}
+/* --------------- */
+
+/* -----QuizzAnimationAnswersBlink----- */
+
+.rightAnswer {
+    animation: pulseGreen 0.3s infinite;
+}
+
+.wrongAnswer {
+    animation: pulseRed 0.3s infinite;
+}
+
+@keyframes pulseGreen {
+    0% { 
+        background-color: rgb(7, 218, 7);
+    }
+    50% {
+        border: 3px Solid var(white);
+        border-radius: 15%;
+        background-color: rgb(14, 41, 14);
+    }
+    100% {
+        background-color: rgb(7, 218, 7);
+    }
+}
+
+@keyframes pulseRed {
+    0% { 
+        background-color: rgb(230, 42, 42);
+    }
+    50% {
+        border: 3px Solid var(white);
+        border-radius: 15%;
+        background-color: rgb(109, 8, 8);
+    }
+    100% {
+        background-color: rgb(230, 42, 42);
+    }
+}
+
+/* --------------- */
+
+
+/* endScreen */
+
+.endScreen {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100vw);
+    top: 0%;
+    visibility: hidden;
+}
+
+.endScreen img {
+    width: 100%;
+    height: 400px;
+}
+
+.endScreen h1 {
+    font-size: 40px;
+    padding: 18px;
+}
